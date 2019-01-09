@@ -1,0 +1,46 @@
+#+TITLE:   Private module for doom emacs
+#+DATE:    January 9, 2019
+#+SINCE:   {replace with next tagged release version}
+#+STARTUP: inlineimages
+
+* Table of Contents :TOC_3:noexport:
+- [[Description][Description]]
+  - [[Module Flags][Module Flags]]
+  - [[Plugins][Plugins]]
+  - [[Hacks][Hacks]]
+- [[Prerequisites][Prerequisites]]
+- [[Features][Features]]
+- [[Configuration][Configuration]]
+- [[Troubleshooting][Troubleshooting]]
+
+* Description
+This is a private module for my personal.
+
++ autocomplete
++ TODO : blog manager
++ TODO : translate with youdao
+
+** Module Flags
+This module provides no flags.
+
+** Plugins
+[[https://github.com/auto-complete/auto-complete][auto-complete]]
+
+** Hacks
+{A list of internal modifications to included packages}
+
+* Prerequisites
+This module prereqisites with [[https://github.com/hlissner/doom-emacs][doom emacs]].
+
+* Features
+An in-depth list of features, how to use them, and their dependencies.
+
+* Configuration
+#+BEGIN_SRC bash
+git clone https://github.com/hlissner/doom-emacs ~/.emacs.d -b develop
+git clone https://github.com/Jerling/.doom.d.git ~/.doom.d
+cd ~/.emacs.d && make install
+#+END_SRC
+
+* Troubleshooting
+Common issues and their solution, or places to look for help.
