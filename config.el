@@ -109,11 +109,12 @@
   :config
   (setq pyim-dcache-directory (expand-file-name "pyim" doom-cache-dir))
   (setq pyim-dicts
-        '((:name "bigdict" :file "~/.config/doom/tools/pyim-dict/pyim-bigdict.pyim")))
+        '((:name "bigdict" :file "~/.config/doom/tools/pyim-bigdict.pyim")))
+        ;; '((:name "greatdict" :file "~/.config/doom/tools/pyim-greatdict.pyim")))
 
   (setq default-input-method "pyim")
 
-  ;; 我使用全拼
+  ;; 我使用全拼 
   (setq pyim-default-scheme 'quanpin)
 
   ;; 设置 pyim 探针设置，这是 pyim 高级功能设置，可以实现 *无痛* 中英文切换 :-)
