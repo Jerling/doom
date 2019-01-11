@@ -164,3 +164,7 @@
   :commands (color-rg-search-input))
 
 (global-auto-revert-mode 0)
+
+;; 中文字体显示异常问题
+;; https://emacs-china.org/t/doom-emacs/6967
+(set-charset-priority 'unicode)

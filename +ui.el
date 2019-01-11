@@ -11,16 +11,8 @@
 (setq display-line-numbers-type nil)
 
 ;; font
-(setq doom-font (font-spec :family "Source Code Pro" :size 14))
-(setq doom-font (font-spec :family "Source Code Pro" :size 17))
-
-;;
-;;
-;; (defun +my|init-font(frame)
-;;   (with-selected-frame frame
-;;     (if (display-graphic-p)
-;;         (+my/better-font))))
-
-;; (if (and (fboundp 'daemonp) (daemonp))
-;;     (add-hook 'after-make-frame-functions #'+my|init-font)
-;;   (+my/better-font))
+(setq
+      doom-font (font-spec :family "DejaVu Sans Mono" :size 16)
+      doom-variable-pitch-font (font-spec :family "DejaVu Sans Mono")
+      doom-unicode-font (font-spec :family "DejaVu Sans Mono")
+      doom-big-font (font-spec :family "DejaVu Sans Mono" :size 19))
