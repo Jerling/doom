@@ -134,7 +134,7 @@
                   pyim-probe-punctuation-after-punctuation))
 
   ;; 开启拼音搜索功能
-  (pyim-isearch-mode 1)
+  ;;(pyim-isearch-mode 1)
 
   ;; 使用 pupup-el 来绘制选词框, 如果用 emacs26, 建议设置
   ;; 为 'posframe, 速度很快并且菜单不会变形，不过需要用户
@@ -167,4 +167,8 @@
 
 ;; 中文字体显示异常问题
 ;; https://emacs-china.org/t/doom-emacs/6967
-(set-charset-priority 'unicode)
+;;(set-charset-priority 'unicode)
+
+;; 有道翻译
+;; Enable Cache
+(setq url-automatic-caching t)

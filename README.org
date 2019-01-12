@@ -16,13 +16,12 @@
 This is a private module for my personal. The config files mainly from
 https://github.com/xhcoding/doom-private , Add I changed some personal config
 for me, and I maybe add some functions. Thanks [[https://xhcoding.github.io/][xhcoding]] again.
-+ autocomplete
++ translate with youdao
 + TODO : blog manager
-+ TODO : translate with youdao
 ** Module Flags
 This module provides no flags.
 ** Plugins
-[[https://github.com/auto-complete/auto-complete][auto-complete]]
+This config will auto install packages; 
 ** Hacks
 {A list of internal modifications to included packages}
 * Prerequisites
@@ -37,5 +36,6 @@ git clone https://github.com/hlissner/doom-emacs ~/.emacs.d -b develop
 git clone https://github.com/Jerling/doom.git ~/.config/doom
 cd ~/.emacs.d && make install
 #+END_SRC
+
 * Troubleshooting
-Common issues and their solution, or places to look for help.
+- for TAGS not find : Maybe need reboot or install rtags reboot for goto definition work well;

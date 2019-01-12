@@ -25,7 +25,8 @@
         (:prefix "o"
           :desc "Agenda"           :n  "a"    #'org-agenda
           :desc "Blog"             :n  "B"    #'+my-blog/open-org-octopress
-          :desc "Debugger"         :n  "d"    #'+debugger:start)
+          :desc "Debugger"         :n  "d"    #'+debugger:start
+          :desc "Youdao translate" :n  "y"    #'youdao-dictionary-search-at-point+)
         (:desc "toggle" :prefix "t"
           :desc "Transparency"     :n  "T"    #'+my/toggle-transparency
           :desc "Auto save"        :n  "a"    #'+my/toggle-auto-save

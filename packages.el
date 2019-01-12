@@ -20,4 +20,5 @@
 (package! auto-save :ignore t)
 (package! scroll-other-window :ignore t)
 (package! openwith :ignore t)
+(package! youdao-dictionary)
 
