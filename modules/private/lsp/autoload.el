@@ -4,7 +4,7 @@
 ;;;###autoload
 (defun +my-python/enable-lsp()
   (unless pyvenv-virtual-env-name
-    (pyvenv-activate "/home/xhcoding/Code/Python/.venv"))
+    (pyvenv-activate "/home/jer/data/Code/Python/.venv"))
   (lsp)
   (setq-local flycheck-checker 'python-pylint)
   )
