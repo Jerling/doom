@@ -16,8 +16,8 @@
 This is a private module for my personal. The config files mainly from
 https://github.com/xhcoding/doom-private , Add I changed some personal config
 for me, and I maybe add some functions. Thanks [[https://xhcoding.github.io/][xhcoding]] again.
-+ translate with youdao
-+ TODO : blog manager
++ Translate with youdao
++ Blog manager : [[https://github.com/masasam/emacs-easy-hugo][easy-hugo]] for manage org files , [[https://github.com/kaushalmodi/ox-hugo][ox-hugo]] export org to markdown .
 ** Module Flags
 This module provides no flags.
 ** Plugins

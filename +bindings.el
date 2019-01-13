@@ -24,8 +24,8 @@
       (:leader
         (:prefix "o"
           :desc "Agenda"           :n  "a"    #'org-agenda
-          :desc "Blog"             :n  "B"    #'+my-blog/open-org-octopress
-          :desc "Debugger"         :n  "d"    #'+debugger:start
+          :desc "Blog"             :n  "B"    #'easy-hugo
+          :desc "Debugger"         :n  "d"    #'gdb
           :desc "Youdao translate" :n  "y"    #'youdao-dictionary-search-at-point+)
         (:desc "toggle" :prefix "t"
           :desc "Transparency"     :n  "T"    #'+my/toggle-transparency
@@ -37,5 +37,9 @@
         (:prefix "r"
           :desc "replace"          :n  "r"    #'vr/replace
           :desc "query replace"    :n  "R"    #'vr/query-replace)
+        (:prefix "c"
+          :desc "comment or uncomment region" :n  "l"    #'comment-or-uncomment-region
+          :desc "comile"                      :n  "C"    #'compile
+          :desc "recompile"                   :n  "c"    #'recompile)
         )
       )

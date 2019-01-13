@@ -5,6 +5,9 @@
 (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
                          ("melpa" . "http://elpa.emacs-china.org/melpa/")
 			             ("org"   . "http://elpa.emacs-china.org/org/")))
+;; (setq package-archives '(("gnu"   . "~/data/elpa/gnu/")
+;;      ("melpa" . "~/data/elpa/melpa/")
+;;      ("org"   . "~/data/elpa/org/")))
 
 ;; 载入与个人非常相关的配置
 (load! "+self.el")
