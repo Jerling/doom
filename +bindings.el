@@ -41,5 +41,10 @@
           :desc "comment or uncomment region" :n  "l"    #'comment-or-uncomment-region
           :desc "comile"                      :n  "C"    #'compile
           :desc "recompile"                   :n  "c"    #'recompile)
+        (:prefix "f"
+          :desc "Find file"                   :n  "f"    #'counsel-find-file)
+        
+		  :desc "excute command"              :n  "SPC"  #'execute-extended-command
+		  :desc "eshell"                      :n  "'"    #'eshell
         )
       )
