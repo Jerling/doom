@@ -1,7 +1,7 @@
 ;;; private/my-blog/config.el -*- lexical-binding: t; -*-
 
 (defvar +my-blog-root-dir
-  "~/blog"
+  "~/data/blog"
   "Blog root directory.")
 
 (def-package! easy-hugo
