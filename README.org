@@ -10,6 +10,7 @@
 - [[Prerequisites][Prerequisites]]
 - [[Features][Features]]
 - [[Configuration][Configuration]]
+  - [[Recommend][Recommend]]
 - [[Troubleshooting][Troubleshooting]]
 
 * Description
@@ -35,6 +36,12 @@ An in-depth list of features, how to use them, and their dependencies.
 git clone https://github.com/hlissner/doom-emacs ~/.emacs.d -b develop
 git clone https://github.com/Jerling/doom.git ~/.config/doom
 cd ~/.emacs.d && make install
+#+END_SRC
+** Recommend
+Maybe want to remap somekey on system, like CapsLock remap to Left_Ctrl and so
+on. Install [[https://github.com/mooz/xkeysnail][xkeysnail]] , and then run the command as follow:
+#+BEGIN_SRC bash 
+sudo nohup xkeysnail ~/.config/doom/tools/config.py >> /dev/null &
 #+END_SRC
 
 * Troubleshooting
