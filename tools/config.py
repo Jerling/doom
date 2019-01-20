@@ -6,13 +6,15 @@ from xkeysnail.transform import *
 
 # [Global modemap] Change modifier keys as in xmodmap
 define_modmap({
-    Key.CAPSLOCK: Key.LEFT_CTRL
+    Key.CAPSLOCK: Key.LEFT_CTRL,
+    Key.LEFT_META: Key.LEFT_ALT,
+    Key.LEFT_ALT: Key.LEFT_META
 })
 
 # [Conditional modmap] Change modifier keys in certain applications
 define_conditional_modmap(re.compile(r'Emacs'), {
     Key.RIGHT_CTRL: Key.ESC,
-    Key.CAPSLOCK: Key.LEFT_CTRL,
+    Key.CAPSLOCK: Key.LEFT_CTRL
 })
 
 # [Multipurpose modmap] Give a key two meanings. A normal key when pressed and

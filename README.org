@@ -42,6 +42,8 @@ Maybe want to remap somekey on system, like CapsLock remap to Left_Ctrl and so
 on. Install [[https://github.com/mooz/xkeysnail][xkeysnail]] , and then run the command as follow:
 #+BEGIN_SRC bash 
 sudo nohup xkeysnail ~/.config/doom/tools/config.py >> /dev/null &
+# or write a script with autostart when longin
+echo passwd | sudo -S xkeysnails ~/.config/doom/tools/config.py &
 #+END_SRC
 
 * Troubleshooting
