@@ -25,7 +25,7 @@
         (:prefix "o"
           :desc "Agenda"           :n  "a"    #'org-agenda
           :desc "Blog"             :n  "B"    #'easy-hugo
-          :desc "Debugger"         :n  "d"    #'gdb
+          :desc "Debugger"         :n  "d"    #'gdb-executable
           :desc "Youdao translate" :n  "y"    #'youdao-dictionary-search-at-point+)
         (:desc "toggle" :prefix "t"
           :desc "Transparency"     :n  "T"    #'+my/toggle-transparency

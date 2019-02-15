@@ -5,7 +5,8 @@
 (def-package! lsp-mode
   :commands (lsp-register-client)
   :config
-  (setq lsp-auto-guess-root t
+  (setq lsp-print-io t
+        lsp-auto-guess-root t
         lsp-prefer-flymake nil
         lsp-session-file (expand-file-name ".lsp-session" doom-etc-dir)
         lsp-project-blacklist '("^/usr/")
@@ -48,7 +49,22 @@
 
 ;; lsp client config
 
-(load! "+ccls")
+(def-package! ccls
+  :init
+  (add-hook! (c-mode c++-mode cuda-mode) #'lsp)
+  :config
+
+ (setq ccls-initialization-options `(:cacheDirectory ,(expand-file-name "~/data/Code/ccls_cache")))
+
+  (evil-set-initial-state 'ccls-tree-mode 'emacs)
+
+  (after! projectile
+    (setq projectile-project-root-files-top-down-recurring
+          (append '("compile_commands.json")
+                  projectile-project-root-files-top-down-recurring))
+    (add-to-list 'projectile-globally-ignored-directories ".ccls-cache"))
+  )
+
 (def-package! dap-lldb
   :after (ccls)
   :config

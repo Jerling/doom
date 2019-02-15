@@ -149,10 +149,12 @@
    ("C-;" . pyim-delete-word-from-personal-buffer)))
 
 (def-package! eaf
-  :load-path "/home/jer/data/Code/elisp/emacs-application-framework/"
+  :load-path "/home/jer/data/Code/Elisp/emacs-application-framework/"
   :commands (eaf-open)
   :config
-  (evil-set-initial-state 'eaf-mode 'emacs))
+  (evil-set-initial-state 'eaf-mode 'emacs)
+  (setq eaf-http-proxy-host "127.0.0.1")
+  (setq eaf-http-proxy-port "1080"))
 
 
 (after! eshell

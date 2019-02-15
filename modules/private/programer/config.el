@@ -37,3 +37,10 @@
 
 (after! realgud
   (setq realgud-safe-mode nil))
+
+(def-package! gdb-mi 
+  :load-path "/home/jer/data/Code/Elisp/emacs-gdb/" 
+  :commands (gdb-mi)
+  :init
+  (fmakunbound 'gdb)
+  (fmakunbound 'gdb-enable-debug))

@@ -2,9 +2,9 @@
 ;; Copy me to ~/.doom.d/init.el or ~/.config/doom/init.el, then edit me!
 
 ;; 插件源
-(setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
-                         ("melpa" . "http://elpa.emacs-china.org/melpa/")
-			             ("org"   . "http://elpa.emacs-china.org/org/")))
+;; (setq package-archives '(("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+;;                          ("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+;; 			             ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
 ;; (setq package-archives '(("gnu"   . "~/data/elpa/gnu/")
 ;;      ("melpa" . "~/data/elpa/melpa/")
 ;;      ("org"   . "~/data/elpa/org/")))

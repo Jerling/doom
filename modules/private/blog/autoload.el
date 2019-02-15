@@ -1,33 +1,43 @@
 ;;; private/my-blog/autoload.el -*- lexical-binding: t; -*-
 
 ;;;###autoload
-(defun +my-blog*export-blog-image-url(filename)
-  (if (equal
-       (string-match-p
-        (regexp-quote (expand-file-name +my-blog-root-dir))
-        (expand-file-name filename))
-       0)
-      (concat  +my-blog-res-url (string-trim-left filename +my-blog-img-dir))
-    nil))
-
+(defun +my-blog/insert-org-or-md-img-link (prefix imagename)
+  (if (equal (file-name-extension (buffer-file-name)) "org")
+      (insert (format "[[%s%s]]" prefix imagename))
+    (insert (format "![%s](%s%s)" imagename prefix imagename))))
 
 ;;;###autoload
-(defun +my-blog-kill-new-img-link(prefix imagename)
-  (kill-new (format "[[file:%s%s]] " prefix imagename imagename)))
-
-;;;###autoload
-(defun +my-blog/capture-screenshot(basename)
+(defun +my-blog/capture-screenshot (basename)
+  "Take a screenshot into a time stamped unique-named file in the
+  same directory as the org-buffer/markdown-buffer and insert a link to this file."
   (interactive "sScreenshot name: ")
-  (if (string-equal basename "")
-      (setq basename
-            (file-name-base buffer-file-name)))
-  (setq filename (concat basename (format-time-string "_%Y%H%M%S")))
-  (sleep-for 3)
-  (call-process-shell-command
-   (concat
-    "deepin-screenshot -s " (concat (expand-file-name +my-blog-img-dir) filename)))
-  (+my-blog-kill-new-img-link
-   +my-blog-img-dir (concat filename ".png")))
+  (message "Click on a window, or select a rectangle...")
+  (if (equal basename "")
+      (setq basename (format-time-string "%Y%m%d_%H%M%S")))
+  (setq fullpath
+        (concat (file-name-directory (buffer-file-name))
+                +my-blog-img-dir
+                (file-name-base (buffer-file-name))
+                "_"
+                basename))
+  (setq relativepath
+        (concat (file-name-base (buffer-file-name))
+                "_"
+                basename
+                ".png"))
+  (if (file-exists-p (file-name-directory fullpath))
+      (progn
+        (setq final-image-full-path (concat fullpath ".png"))
+        (call-process "scrot" nil nil nil "-s" final-image-full-path)
+        (if (executable-find "convert")
+            (progn
+              (setq resize-command-str (format "convert %s -resize 800x600 %s" final-image-full-path final-image-full-path))
+              (shell-command-to-string resize-command-str)))
+        (+my-blog/insert-org-or-md-img-link +my-blog-img-url relativepath))
+    (progn
+      (call-process "scrot" nil nil nil "-s" (concat basename ".png"))
+      (+my-blog/insert-org-or-md-img-link +my-blog-img-url (concat basename ".png"))))
+  (insert "\n"))
 
 ;;;###autoload
 (defun cesco/easy-hugo ()
