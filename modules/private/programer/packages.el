@@ -4,3 +4,5 @@
 (package! google-c-style)
 
 (package! cmake-project :recipe (:fetcher github :repo "xhcoding/cmake-project"))
+
+(package! zeal-at-point)
