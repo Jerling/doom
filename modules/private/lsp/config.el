@@ -71,14 +71,14 @@
   (setq dap-lldb-debugged-program-function 'cp-project-debug))
 
 ;; ms-python
-(def-package! ms-python
-  :config
-  (add-hook 'python-mode-hook #'+my-python/enable-lsp)
-  (setq ms-python-server-install-dir (expand-file-name "ms-pyls" doom-etc-dir))
-  )
+;;(def-package! ms-python
+;;  :config
+;;  (add-hook 'python-mode-hook #'+my-python/enable-lsp)
+;;  (setq ms-python-server-install-dir (expand-file-name "ms-pyls" doom-etc-dir))
+;;  )
 
-(def-package! dap-python
-  :after (ms-python))
+;;(def-package! dap-python
+;;  :after (ms-python))
 
 ;; lsp-java
 (def-package! lsp-java
