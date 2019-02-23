@@ -4,7 +4,8 @@
 (after! org
   (setq org-ellipsis " ▼ "
         org-image-actual-width '(400)
-        org-ditaa-jar-path (concat doom-etc-dir "ditaa.jar")
+        org-ditaa-jar-path (concat doom-private-dir "tools/ditaa.jar")
+        org-plantuml-jar-path (concat doom-private-dir "tools/plantuml.jar")
         org-agenda-files (list (concat +my-org-dir "gtd.org"))
         +org-default-notes-file (expand-file-name "inbox.org" +my-org-dir)
         +org-default-todo-file (expand-file-name "todo.org" +my-org-dir)

@@ -15,7 +15,7 @@
       :i      "M-p"       #'previous-line
       :i      "C-s"       #'counsel-grep-or-swiper
       :i      "C-v"       #'yank
-      :i      "C-j"       #'+my/newline
+      :i      "C-h"       #'delete-backward-char
       :m      "gb"        #'evil-jump-backward
       :m      "gB"        #'evil-jump-forward
       :ov     "s"         #'isolate-quick-add
