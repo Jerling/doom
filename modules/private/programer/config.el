@@ -4,6 +4,10 @@
   :config
   (add-hook! (c-mode c++-mode) #'google-set-c-style))
 
+(def-package! clang-format
+  :after (ccls)
+  :commands (clang-format-region clang-format-buffer))
+
 (def-package! cmake-project
   :after cc-mode
   :commands (cp-project-refresh cp-project-new cp-project-debug)
@@ -44,3 +48,19 @@
   :init
   (fmakunbound 'gdb)
   (fmakunbound 'gdb-enable-debug))
+
+
+(setq gdb-many-windows t)
+(global-set-key [f5] 'gud-gdb)
+(global-set-key [C-f5] 'gud-run)
+(global-set-key [S-f5] 'gud-cont)
+(global-set-key [f7] 'compile)
+(global-set-key [f8] 'gud-print)
+(global-set-key [C-f8] 'gud-pstar)
+(global-set-key [f9] 'gud-break)
+(global-set-key [C-f9] 'gud-remove)
+(global-set-key [f10] 'gud-next)
+(global-set-key [C-f10] 'gud-until)
+(global-set-key [S-f10] 'gud-jump)
+(global-set-key [f11] 'gud-step)
+(global-set-key [C-f11] 'gud-finish)
