@@ -1,8 +1,8 @@
 ;;; private/my-cc/config.el -*- lexical-binding: t; -*-
 
-(def-package! google-c-style
-  :config
-  (add-hook! (c-mode c++-mode) #'google-set-c-style))
+;; (def-package! google-c-style
+;;   :config
+;;   (add-hook! (c-mode c++-mode) #'google-set-c-style))
 
 (def-package! clang-format
   :after (ccls)
@@ -42,23 +42,20 @@
 (after! realgud
   (setq realgud-safe-mode nil))
 
-(def-package! gdb-mi 
-  :load-path "~/data/Code/Elisp/emacs-gdb/" 
-  :commands (gdb-mi)
-  :init
-  (fmakunbound 'gdb)
-  (fmakunbound 'gdb-enable-debug))
-
+;; (def-package! gdb-mi 
+;;   :load-path "~/data/Code/Elisp/emacs-gdb/" 
+;;   :commands (gdb-mi)
+;;   :init
+;;   (fmakunbound 'gdb)
+;;   (fmakunbound 'gdb-enable-debug))
 
 (setq gdb-many-windows t)
-(global-set-key [f5] 'gud-gdb)
-(global-set-key [C-f5] 'gud-run)
-(global-set-key [S-f5] 'gud-cont)
-(global-set-key [f7] 'compile)
-(global-set-key [f8] 'gud-print)
-(global-set-key [C-f8] 'gud-pstar)
-(global-set-key [f9] 'gud-break)
-(global-set-key [C-f9] 'gud-remove)
+(global-set-key [f5] 'gud-run)
+(global-set-key [S-f5] 'gud-kill)
+(global-set-key [C-f7] '(lambda () (interactive) (compile compile-command)))
+(global-set-key [f6] 'gud-print)
+(global-set-key [C-f6] 'gud-pstar)
+(global-set-key [f9] 'gud-break-remove)
 (global-set-key [f10] 'gud-next)
 (global-set-key [C-f10] 'gud-until)
 (global-set-key [S-f10] 'gud-jump)

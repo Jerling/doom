@@ -20,9 +20,6 @@
        (lookup           ; helps you navigate your code and documentation
         +docsets)        ; ...or in Dash docsets locally
        snippets          ; my elves. They type so I don't have to
-       spellcheck        ; tasing you for misspelling mispelling
-       (syntax-checker    ; tasing you for every semicolon you forget
-        +childframe)
        workspaces        ; tab emulation, persistence & separate workspaces
 
        :completion
@@ -71,12 +68,12 @@
        ;;+ranger         ; bringing the goodness of ranger to dired
        ;;+icons          ; colorful icons for dired-mode
         )
-       ediff             ; comparing files in Emacs
+       ;; ediff             ; comparing files in Emacs
        electric          ; smarter, keyword-based electric-indent
        ;;eshell            ; a consistent, cross-platform shell (WIP)
-       hideshow          ; basic code-folding support
+       ;;fold            ; basic code-folding support
        imenu             ; an imenu sidebar and searchable code index
-       ;;term              ; terminals in Emacs
+       ;;term            ; terminals in Emacs
        vc                ; version-control and Emacs, sitting in a tree
 
        :tools
@@ -96,6 +93,7 @@
        ;;tmux              ; an API for interacting with tmux
        ;;upload            ; map local to remote projects via ssh/ftp
        ;;wakatime
+       flycheck            ; tasing you for every semicolon you forget
 
        :lang
        assembly          ; assembly for fun or debugging
