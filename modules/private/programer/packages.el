@@ -8,5 +8,3 @@
 (package! cmake-project :recipe (:fetcher github :repo "xhcoding/cmake-project"))
 
 (package! zeal-at-point)
-
-(package! gdb-ui :recipe (:fetcher github :repo "inlinechan/gdb-ui"))
