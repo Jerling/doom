@@ -34,7 +34,7 @@ An in-depth list of features, how to use them, and their dependencies.
 * Configuration
 #+BEGIN_SRC bash
 git clone https://github.com/hlissner/doom-emacs ~/.emacs.d -b develop
-git clone https://github.com/Jerling/doom.git ~/.config/doom
+git clone --recursive https://github.com/Jerling/doom.git ~/.config/doom
 cd ~/.emacs.d && make install
 #+END_SRC
 ** Recommend
