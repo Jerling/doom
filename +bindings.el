@@ -30,7 +30,6 @@
         (:desc "toggle" :prefix "t"
           :desc "Transparency"     :n  "T"    #'+my/toggle-transparency
           :desc "Auto save"        :n  "a"    #'+my/toggle-auto-save
-          :desc "Comment "         :n  "c"    #'comment-line
           :desc "Cycle theme"      :n  "t"    #'+my/toggle-cycle-theme
           :desc "English Helper"   :n  "e"    #'toggle-company-english-helper
           )
@@ -38,7 +37,8 @@
           :desc "replace"          :n  "r"    #'vr/replace
           :desc "query replace"    :n  "R"    #'vr/query-replace)
         (:prefix "c"
-          :desc "comment or uncomment region" :n  "l"    #'comment-or-uncomment-region
+          :desc "Comment "                    :n  "l"    #'comment-line
+          :desc "comment or uncomment region" :n  "L"    #'comment-or-uncomment-region
           :desc "comile"                      :n  "C"    #'compile
           :desc "recompile"                   :n  "c"    #'recompile)
         (:prefix "f"
