@@ -1,12 +1,12 @@
 ;;; private/my-cc/config.el -*- lexical-binding: t; -*-
 
-;; (def-package! google-c-style
-;;   :config
-;;   (add-hook! (c-mode c++-mode) #'google-set-c-style))
+(def-package! google-c-style
+  :config
+  (add-hook! (c-mode c++-mode) #'google-set-c-style))
 
-(def-package! clang-format
-  :after (ccls)
-  :commands (clang-format-region clang-format-buffer))
+;; (def-package! clang-format
+;;   :after (ccls)
+;;   :commands (clang-format-region clang-format-buffer))
 
 (def-package! cmake-project
   :after cc-mode
@@ -49,15 +49,15 @@
 ;;   (fmakunbound 'gdb)
 ;;   (fmakunbound 'gdb-enable-debug))
 
-(setq gdb-many-windows t)
-(global-set-key [f5] 'gud-run)
-(global-set-key [S-f5] 'gud-kill)
-(global-set-key [C-f7] '(lambda () (interactive) (compile compile-command)))
-(global-set-key [f6] 'gud-print)
-(global-set-key [C-f6] 'gud-pstar)
-(global-set-key [f9] 'gud-break-remove)
-(global-set-key [f10] 'gud-next)
-(global-set-key [C-f10] 'gud-until)
-(global-set-key [S-f10] 'gud-jump)
-(global-set-key [f11] 'gud-step)
-(global-set-key [C-f11] 'gud-finish)
+;; (setq gdb-many-windows t)
+;; (global-set-key [f5] 'gud-run)
+;; (global-set-key [S-f5] 'gud-kill)
+;; (global-set-key [C-f7] '(lambda () (interactive) (compile compile-command)))
+;; (global-set-key [f6] 'gud-print)
+;; (global-set-key [C-f6] 'gud-pstar)
+;; (global-set-key [f9] 'gud-break-remove)
+;; (global-set-key [f10] 'gud-next)
+;; (global-set-key [C-f10] 'gud-until)
+;; (global-set-key [S-f10] 'gud-jump)
+;; (global-set-key [f11] 'gud-step)
+;; (global-set-key [C-f11] 'gud-finish)
