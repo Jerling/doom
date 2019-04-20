@@ -63,7 +63,10 @@
           (append '("compile_commands.json")
                   projectile-project-root-files-top-down-recurring))
     (add-to-list 'projectile-globally-ignored-directories ".ccls-cache"))
-  (setq ccls-executable "~/ccls/Release/ccls.exe")
+  (if IS-WINDOWS
+      (setq ccls-executable "~/ccls/Release/ccls.exe")
+    (setq ccls-executable "~/ccls/Release/ccls"))
+  
   )
 
 (def-package! dap-lldb
