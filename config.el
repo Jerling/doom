@@ -174,3 +174,6 @@
 ;; 有道翻译
 ;; Enable Cache
 (setq url-automatic-caching t)
+
+;; 全频
+(toggle-frame-fullscreen)
