@@ -176,4 +176,4 @@
 (setq url-automatic-caching t)
 
 ;; 全频
-(toggle-frame-fullscreen)
+(toggle-frame-maximized)
