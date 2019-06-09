@@ -1,17 +1,21 @@
 ;;; private/my-cc/autoload.el -*- lexical-binding: t; -*-
 
 ;;;###autoload
-(defun gud-break-remove ()
-  "Set/clear breakpoin."
-  (interactive)
-  (save-excursion
-    (if (eq (car (fringe-bitmaps-at-pos (point))) 'breakpoint)
-        (gud-remove nil)
-      (gud-break nil))))
+(defun my-gdb-executable (debuggee-path)
+  "Start debugging an executable at DEBUGGEE-PATH in the current session.
+If no session is available, one is automatically created."
+  (interactive
+   (list (expand-file-name (read-file-name "Select executable to debug: " "build/bin"
+                                           gdb--previous-executable t nil 'file-executable-p))))
+  (let ((session (or (gdb--infer-session) (gdb-create-session))))
+    (setq gdb--previous-executable debuggee-path)
+    (setf (gdb--session-debuggee-path session) debuggee-path)
 
-;;;###autoload
-(defun gud-kill ()
-  "Kill gdb process."
-  (interactive)
-  (with-current-buffer gud-comint-buffer (comint-skip-input))
-  (kill-process (get-buffer-process gud-comint-buffer)))
+    (with-selected-frame (gdb--session-frame session)
+      (gdb--command (concat "-file-exec-and-symbols " (gdb--escape-argument (gdb--local-path debuggee-path))))
+      (gdb--command "-file-list-exec-source-file" 'gdb--context-initial-file)
+      (gdb--rename-buffers-with-debuggee debuggee-path))
+
+    (cl-loop for frame in (frame-list)
+             when (eq (frame-parameter frame 'gdb--session) session)
+             do (gdb--rename-frame frame))))

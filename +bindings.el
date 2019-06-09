@@ -25,7 +25,9 @@
         (:prefix "o"
           :desc "Agenda"           :n  "a"    #'org-agenda
           :desc "Blog"             :n  "B"    #'easy-hugo
-          :desc "Debugger"         :n  "d"    #'gdb-executable
+          :desc "Debugger"         :n  "d"    #'my-gdb-executable
+          :desc "Add gdb watcher"  :n  "w"    #'gdb-watcher-add
+          :desc "Kill gdb session" :n  "k"    #'gdb-kill-session
           :desc "Youdao translate" :n  "y"    #'youdao-dictionary-search-at-point+)
         (:desc "toggle" :prefix "t"
           :desc "Transparency"     :n  "T"    #'+my/toggle-transparency
@@ -38,6 +40,8 @@
           :desc "query replace"    :n  "R"    #'vr/query-replace)
         (:prefix "c"
           :desc "Comment "                    :n  "l"    #'comment-line
+          :desc "C++ project refresh"         :n  "r"    #'cp-project-refresh
+          :desc "C++ project gen"             :n  "g"    #'cp-project-gen
           :desc "comment or uncomment region" :n  "L"    #'comment-or-uncomment-region
           :desc "comile"                      :n  "C"    #'compile
           :desc "recompile"                   :n  "c"    #'recompile)

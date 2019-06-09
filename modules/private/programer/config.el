@@ -38,28 +38,3 @@
    (:mode (c-mode c++-mode)
      :gnvime "<f7>" #'cp-project-build
      :gnvime "<f8>" #'cp-project-run)))
-
-(after! realgud
-  (setq realgud-safe-mode nil))
-
-;; (def-package! gdb-mi 
-;;   :load-path "~/data/Code/Elisp/emacs-gdb/" 
-;;   :commands (gdb-mi)
-;;   :init
-;;   (fmakunbound 'gdb)
-;;   (fmakunbound 'gdb-enable-debug))
-
-;; (setq gdb-many-windows t)
-;; (global-set-key [f5] 'gdb)
-;; (global-set-key [S-f5] 'gud-run)
-;; (global-set-key [C-f5] 'gud-cont)
-;; (global-set-key [f6] 'compile)
-;; (global-set-key [C-f6] 'gud-print)
-;; (global-set-key [C-f8] 'gud-pstar)
-;; (global-set-key [f9] 'gud-break)
-;; (global-set-key [C-f9] 'gud-remove)
-;; (global-set-key [f10] 'gud-next)
-;; (global-set-key [C-f10] 'gud-until)
-;; (global-set-key [S-f10] 'gud-jump)
-;; (global-set-key [f11] 'gud-step)
-;; (global-set-key [C-f11] 'gud-finish)
