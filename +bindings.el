@@ -25,9 +25,8 @@
         (:prefix "o"
           :desc "Agenda"           :n  "a"    #'org-agenda
           :desc "Blog"             :n  "B"    #'easy-hugo
+          :desc "Blog-org-to-md"   :n  "m"    #'org-hugo-export-to-md
           :desc "Debugger"         :n  "d"    #'my-gdb-executable
-          :desc "Add gdb watcher"  :n  "w"    #'gdb-watcher-add
-          :desc "Kill gdb session" :n  "k"    #'gdb-kill-session
           :desc "Youdao translate" :n  "y"    #'youdao-dictionary-search-at-point+)
         (:desc "toggle" :prefix "t"
           :desc "Transparency"     :n  "T"    #'+my/toggle-transparency
@@ -47,7 +46,18 @@
           :desc "recompile"                   :n  "c"    #'recompile)
         (:prefix "f"
           :desc "Find file"                   :n  "f"    #'counsel-find-file)
-        
+        (:desc "jump" :prefix "j"
+          :desc "Jump to char"                :n  "j"    #'evilem-motion-find-char-to
+          :desc "Jump to backward char"       :n  "J"    #'evilem-motion-find-char-to-backward
+          :desc "Jump to window"              :n  "w"    #'ace-swap-window
+          )
+        (:desc "debugger" :prefix "d"
+          :desc "Add gdb watcher"  :n  "w"    #'gdb-watcher-add
+          :desc "Kill gdb session" :n  "k"    #'gdb-kill-session
+          :desc "Run gdb session"  :n  "r"    #'gdb-run-or-continue
+          :desc "Gdb breaks"       :n  "b"    #'gdb-toggle-breakpoint
+          :desc "Gdb i/o buffer"   :n  "i"    #'gdb-switch-buffer/lambda-i-and-exit
+          )
 		  :desc "excute command"              :n  "SPC"  #'execute-extended-command
 		  :desc "eshell"                      :n  "'"    #'eshell
         )

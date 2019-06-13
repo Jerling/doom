@@ -3,15 +3,15 @@
 #+SINCE:   {replace with next tagged release version}
 #+STARTUP: inlineimages
 * Table of Contents :TOC_3:noexport:
-- [[Description][Description]]
-  - [[Module Flags][Module Flags]]
-  - [[Plugins][Plugins]]
-  - [[Hacks][Hacks]]
-- [[Prerequisites][Prerequisites]]
-- [[Features][Features]]
-- [[Configuration][Configuration]]
-  - [[Recommend][Recommend]]
-- [[Troubleshooting][Troubleshooting]]
+- [[#description][Description]]
+  - [[#module-flags][Module Flags]]
+  - [[#plugins][Plugins]]
+  - [[#hacks][Hacks]]
+- [[#prerequisites][Prerequisites]]
+- [[#features][Features]]
+- [[#configuration][Configuration]]
+  - [[#recommend][Recommend]]
+- [[#troubleshooting][Troubleshooting]]
 
 * Description
 This is a private module for my personal. The config files mainly from
@@ -48,3 +48,4 @@ echo passwd | sudo -S xkeysnail ~/.config/doom/tools/config.py &
 
 * Troubleshooting
 - for TAGS not find : Maybe need reboot or install rtags reboot for goto definition work well;
+- if not work, maybe need to rollback to =commit 8e453462c7a72b9194d642f227f3197d7b14de9b (HEAD -> develop, origin/develop, origin/HEAD)=
