@@ -174,29 +174,6 @@
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.nas\\'" . nasm-mode))
 
-;; from TeX-pdf-tools-sync-view
-;;;###autoload
-(defun TeX-eaf-sync-view()
-  (unless (fboundp 'eaf-open)
-    (error "EAF is not available!"))
-  (let* ((pdf (concat file "." (TeX-output-extension)))
-         (url (expand-file-name pdf))
-         (app-name "pdfviewer")
-         (exists-eaf-buffer)
-         (eaf-buffer-window))
-    (catch 'found-match-buffer
-      (dolist (buffer (buffer-list))
-        (set-buffer buffer)
-        (when (equal major-mode 'eaf-mode)
-          (when (and (string= buffer-url url)
-                     (string= buffer-app-name app-name))
-            (setq exists-eaf-buffer buffer)
-            (setq eaf-buffer-window (get-buffer-window exists-eaf-buffer))
-            (throw 'found-match-buffer t)))))
-    (if (and exists-eaf-buffer eaf-buffer-window)
-        (pop-to-buffer exists-eaf-buffer)
-      (eaf-open url app-name "--synctex_on=True"))))
-
 
 ;;;###autoload
 (defun browse-current-file ()

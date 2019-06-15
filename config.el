@@ -64,7 +64,7 @@
   :config
   (setq openwith-associations
         '(
-          ("\\.pdf\\'" "okular" (file))
+          ("\\.pdf\\'" "foxitreader" (file))
           ("\\.docx?\\'" "wps" (file))
           ("\\.pptx?\\'" "wpp" (file))
           ("\\.xlsx?\\'" "et" (file))))
@@ -98,11 +98,9 @@
   (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex --synctex=1%(mode)%' %t" TeX-run-TeX nil t))
   (setq-hook! LaTeX-mode TeX-command-default "XeLaTex")
 
-  (setq TeX-save-query nil)
-  (when (fboundp 'eaf-open)
-    (add-to-list 'TeX-view-program-list '("eaf" TeX-eaf-sync-view))
-    (add-to-list 'TeX-view-program-selection '(output-pdf "eaf")))
-  )
+ ;;  (add-to-list 'TeX-view-program-list '("foxitreader" foxitreader))
+ ;;  (add-to-list 'TeX-view-program-selection '(output-pdf "foxitreader"))
+ )
 
 (def-package! pyim
   :defer 2
@@ -148,15 +146,6 @@
   (("M-l" . pyim-convert-code-at-point) ;与 pyim-probe-dynamic-english 配合
    ("C-;" . pyim-delete-word-from-personal-buffer)))
 
-(def-package! eaf
-  :load-path "/home/jer/data/Code/Elisp/emacs-application-framework/"
-  :commands (eaf-open)
-  :config
-  (evil-set-initial-state 'eaf-mode 'emacs)
-  (setq eaf-http-proxy-host "127.0.0.1")
-  (setq eaf-http-proxy-port "1080"))
-
-
 (after! eshell
   (setq eshell-directory-name (expand-file-name "eshell" doom-etc-dir)))
 
@@ -177,3 +166,9 @@
 
 ;; 全频
 (toggle-frame-maximized)
+
+;; (setq +latex-viewers '(zathura))
+
+(add-to-list '+lookup-provider-url-alist
+             '("Bing"     . "https://cn.bing.com/search?q=%s")
+)

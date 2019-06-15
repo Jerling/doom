@@ -18,21 +18,21 @@
       :i      "C-h"       #'delete-backward-char
       :m      "gb"        #'evil-jump-backward
       :m      "gB"        #'evil-jump-forward
-      :ov     "s"         #'isolate-quick-add
-      :ov     "S"         #'isolate-long-add
 
       (:leader
         (:prefix "o"
           :desc "Agenda"           :n  "a"    #'org-agenda
           :desc "Blog"             :n  "B"    #'easy-hugo
-          :desc "Blog-org-to-md"   :n  "m"    #'org-hugo-export-to-md
+          :desc "Man"              :n  "m"    #'man
           :desc "Debugger"         :n  "d"    #'my-gdb-executable
+          :desc "Terminal"         :n  "t"    #'term
           :desc "Youdao translate" :n  "y"    #'youdao-dictionary-search-at-point+)
         (:desc "toggle" :prefix "t"
           :desc "Transparency"     :n  "T"    #'+my/toggle-transparency
           :desc "Auto save"        :n  "a"    #'+my/toggle-auto-save
           :desc "Cycle theme"      :n  "t"    #'+my/toggle-cycle-theme
           :desc "English Helper"   :n  "e"    #'toggle-company-english-helper
+          :desc "Blog-org-to-md"   :n  "m"    #'org-hugo-export-to-md
           )
         (:prefix "r"
           :desc "replace"          :n  "r"    #'vr/replace
@@ -56,7 +56,9 @@
           :desc "Kill gdb session" :n  "k"    #'gdb-kill-session
           :desc "Run gdb session"  :n  "r"    #'gdb-run-or-continue
           :desc "Gdb breaks"       :n  "b"    #'gdb-toggle-breakpoint
+          :desc "Gdb breaks"       :n  "a"    #'gdb-create-watcher-from-ask
           :desc "Gdb i/o buffer"   :n  "i"    #'gdb-switch-buffer/lambda-i-and-exit
+          :desc "Gdb i/o buffer"   :n  "v"    #'gdb-switch-buffer/lambda-v-and-exit
           )
 		  :desc "excute command"              :n  "SPC"  #'execute-extended-command
 		  :desc "eshell"                      :n  "'"    #'eshell
