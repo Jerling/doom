@@ -54,7 +54,7 @@
   (add-hook! (c-mode c++-mode cuda-mode) #'lsp)
   :config
 
- (setq ccls-initialization-options `(:cacheDirectory ,(expand-file-name "~/data/Code/ccls_cache")))
+ (setq ccls-initialization-options `(:cacheDirectory ,(expand-file-name "~/.cache/ccls_cache")))
 
   (evil-set-initial-state 'ccls-tree-mode 'emacs)
 
