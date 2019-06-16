@@ -41,11 +41,22 @@
           :desc "Comment "                    :n  "l"    #'comment-line
           :desc "C++ project refresh"         :n  "r"    #'cp-project-refresh
           :desc "C++ project gen"             :n  "g"    #'cp-project-gen
+          :desc "C++ project new"             :n  "n"    #'cp-project-new
           :desc "comment or uncomment region" :n  "L"    #'comment-or-uncomment-region
           :desc "comile"                      :n  "C"    #'compile
           :desc "recompile"                   :n  "c"    #'recompile)
         (:prefix "f"
           :desc "Find file"                   :n  "f"    #'counsel-find-file)
+        (:prefix "s"
+          :desc "Search at buffer"            :n  "b"    #'counsel-grep-or-swiper
+          :desc "Search at imenu"             :n  "i"    #'counsel-imenu
+          :desc "Search at current directory" :n  "d"    #'+default/search-from-cwd
+          :desc "Search at project"           :n  "p"    #'+default/search-project
+          :desc "Search at current directory" :n  "P"    #'+default/search-project-for-symbol-at-point
+          )
+        (:prefix "/"
+          :desc "Search at current directory" :n  "P"    #'+default/search-project-for-symbol-at-point
+          )
         (:desc "jump" :prefix "j"
           :desc "Jump to char"                :n  "j"    #'evilem-motion-find-char-to
           :desc "Jump to backward char"       :n  "J"    #'evilem-motion-find-char-to-backward
