@@ -9,11 +9,11 @@
 (when (featurep! :completion company)
   (package! company-lsp))
 
-(when (featurep! :lang cc)
-  (package! ccls))
+;; (when (featurep! :lang cc)
+;;   (package! ccls))
 
 ;; (when (featurep! :lang python)
 ;;   (package! ms-python :recipe (:fetcher github :repo "xhcoding/ms-python")))
 
-(package! lsp-java)
+;; (package! lsp-java)
 (package! dap-mode)

@@ -48,11 +48,12 @@
         (:prefix "f"
           :desc "Find file"                   :n  "f"    #'counsel-find-file)
         (:prefix "s"
-          :desc "Search at buffer"            :n  "b"    #'counsel-grep-or-swiper
-          :desc "Search at imenu"             :n  "i"    #'counsel-imenu
-          :desc "Search at current directory" :n  "d"    #'+default/search-from-cwd
-          :desc "Search at project"           :n  "p"    #'+default/search-project
-          :desc "Search at current directory" :n  "P"    #'+default/search-project-for-symbol-at-point
+          :desc "Search at buffer"                     :n  "b"    #'counsel-grep-or-swiper
+          :desc "Search at imenu"                      :n  "i"    #'counsel-imenu
+          :desc "Search at online"                     :n  "o"    #'+lookup/online
+          :desc "Search at current directory"          :n  "d"    #'+default/search-from-cwd
+          :desc "Search at project"                    :n  "p"    #'+default/search-project
+          :desc "Search at current directory at point" :n  "P"    #'+default/search-project-for-symbol-at-point
           )
         (:prefix "/"
           :desc "Search at current directory" :n  "P"    #'+default/search-project-for-symbol-at-point

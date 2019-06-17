@@ -65,14 +65,14 @@
     (add-to-list 'projectile-globally-ignored-directories ".ccls-cache"))
   (if IS-WINDOWS
       (setq ccls-executable "~/ccls/Release/ccls.exe")
-    (setq ccls-executable "~/ccls/Release/ccls"))
-  
+    (setq ccls-executable "~/ccls/Release/ccls")
+    )
   )
 
-(def-package! dap-lldb
-  :after (ccls)
-  :config
-  (setq dap-lldb-debugged-program-function 'cp-project-debug))
+;; (def-package! dap-lldb
+;;   :after (ccls)
+;;   :config
+;;   (setq dap-lldb-debugged-program-function 'cp-project-debug))
 
 ;; ms-python
 ;;(def-package! ms-python
@@ -85,15 +85,15 @@
 ;;  :after (ms-python))
 
 ;; lsp-java
-(def-package! lsp-java
-  :config
-  (add-hook 'java-mode-hook #'lsp)
-  (setq lsp-java-server-install-dir (expand-file-name "lsp-java/server" doom-etc-dir)
-        lsp-java-workspace-dir (expand-file-name "lsp-java/workspace" doom-etc-dir)))
+;; (def-package! lsp-java
+;;   :config
+;;   (add-hook 'java-mode-hook #'lsp)
+;;   (setq lsp-java-server-install-dir (expand-file-name "lsp-java/server" doom-etc-dir)
+;;         lsp-java-workspace-dir (expand-file-name "lsp-java/workspace" doom-etc-dir)))
 
 
-(def-package! dap-java
-  :after (lsp-java))
+;; (def-package! dap-java
+;;   :after (lsp-java))
 
-(def-package! lsp-java-treemacs
-  :after (treemacs))
+;; (def-package! lsp-java-treemacs
+;;   :after (treemacs))
