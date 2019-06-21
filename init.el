@@ -48,6 +48,9 @@
        (window-select     ; visually switch windows
         +ace-window)
 
+       :input
+       chinese
+
        :editor
        (evil +everywhere); come to the dark side, we have cookies
        file-templates    ; auto-snippets for empty files
@@ -68,7 +71,6 @@
        ;;eshell            ; a consistent, cross-platform shell (WIP)
        ;;fold            ; basic code-folding support
        ;; imenu             ; an imenu sidebar and searchable code index
-       ;;term            ; terminals in Emacs
        vc                ; version-control and Emacs, sitting in a tree
 
        :tools
@@ -145,6 +147,9 @@
        ;;swift             ; who asked for emoji variables?
        ;; web               ; the tubes
        ;;vala              ; GObjective-C
+
+       :term
+       vterm                ; Terminal in emacs
 
        ;; Applications are complex and opinionated modules that transform Emacs
        ;; toward a specific purpose. They may have additional dependencies and

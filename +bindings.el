@@ -25,7 +25,6 @@
           :desc "Blog"             :n  "B"    #'easy-hugo
           :desc "Man"              :n  "m"    #'man
           :desc "Debugger"         :n  "d"    #'my-gdb-executable
-          :desc "Terminal"         :n  "t"    #'term
           :desc "Youdao translate" :n  "y"    #'youdao-dictionary-search-at-point+)
         (:desc "toggle" :prefix "t"
           :desc "Transparency"     :n  "T"    #'+my/toggle-transparency
@@ -61,7 +60,7 @@
         (:desc "jump" :prefix "j"
           :desc "Jump to char"                :n  "j"    #'evilem-motion-find-char-to
           :desc "Jump to backward char"       :n  "J"    #'evilem-motion-find-char-to-backward
-          :desc "Jump to window"              :n  "w"    #'ace-swap-window
+          :desc "Jump to window"              :n  "w"    #'ace-window
           )
         (:desc "debugger" :prefix "d"
           :desc "Add gdb watcher"  :n  "w"    #'gdb-watcher-add
