@@ -24,7 +24,9 @@
           :desc "Agenda"           :n  "a"    #'org-agenda
           :desc "Blog"             :n  "B"    #'easy-hugo
           :desc "Man"              :n  "m"    #'man
+          :desc "Ssh"              :n  "s"    #'counsel-tramp
           :desc "Debugger"         :n  "d"    #'my-gdb-executable
+          :desc "Dap-debug"        :n  "D"    #'dap-debug
           :desc "Youdao translate" :n  "y"    #'youdao-dictionary-search-at-point+)
         (:desc "toggle" :prefix "t"
           :desc "Transparency"     :n  "T"    #'+my/toggle-transparency
@@ -63,13 +65,16 @@
           :desc "Jump to window"              :n  "w"    #'ace-window
           )
         (:desc "debugger" :prefix "d"
-          :desc "Add gdb watcher"  :n  "w"    #'gdb-watcher-add
-          :desc "Kill gdb session" :n  "k"    #'gdb-kill-session
-          :desc "Run gdb session"  :n  "r"    #'gdb-run-or-continue
-          :desc "Gdb breaks"       :n  "b"    #'gdb-toggle-breakpoint
-          :desc "Gdb breaks"       :n  "a"    #'gdb-create-watcher-from-ask
-          :desc "Gdb i/o buffer"   :n  "i"    #'gdb-switch-buffer/lambda-i-and-exit
-          :desc "Gdb i/o buffer"   :n  "v"    #'gdb-switch-buffer/lambda-v-and-exit
+          :desc "Add gdb watcher"          :n  "w"    #'gdb-watcher-add
+          :desc "Kill gdb session"         :n  "k"    #'gdb-kill-session
+          :desc "Run gdb session"          :n  "r"    #'gdb-run-or-continue
+          :desc "Gdb breaks"               :n  "a"    #'gdb-create-watcher-from-ask
+          :desc "Dap-debug break"          :n  "b"    #'dap-breakpoint-toggle
+          :desc "Dap-debug step in"        :n  "n"    #'dap-next
+          :desc "Dap-debug step out"       :n  "i"    #'dap-step-in
+          :desc "Dap-debug step out"       :n  "o"    #'dap-step-out
+          :desc "Dap-debug continue"       :n  "c"    #'dap-continue
+          :desc "Dap-debug delete session" :n  "d"    #'dap-delete-session
           )
 		  :desc "excute command"              :n  "SPC"  #'execute-extended-command
 		  :desc "eshell"                      :n  "'"    #'eshell

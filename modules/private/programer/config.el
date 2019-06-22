@@ -38,3 +38,7 @@
    (:mode (c-mode c++-mode)
      :gnvime "<f7>" #'cp-project-build
      :gnvime "<f8>" #'cp-project-run)))
+
+(eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
+(setq tramp-default-method "ssh")
+(setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>] *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*")

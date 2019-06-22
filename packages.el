@@ -1,12 +1,11 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; config/private/packages.el
 
-;; (disable-packages! anaconda-mode)
+(disable-packages! anaconda-mode)
 
 (package! visual-regexp)
 (package! visual-regexp-steroids)
 ;; (package! org-edit-latex)
-;; (package! pyim)
 (package! package-lint)
 
 
