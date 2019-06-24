@@ -43,7 +43,7 @@ on. Install [[https://github.com/mooz/xkeysnail][xkeysnail]] , and then run the 
 #+BEGIN_SRC bash 
 nohup sudo xkeysnail ~/.config/doom/tools/config.py >> /dev/null &
 # or write a script with autostart when longin
-echo passwd | sudo -S xkeysnail ~/.config/doom/tools/config.py &
+nohup echo passwd | sudo -S xkeysnail ~/.config/doom/tools/config.py >> /dev/null &
 #+END_SRC
 
 * Troubleshooting
