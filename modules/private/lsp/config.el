@@ -69,7 +69,7 @@
     (add-to-list 'projectile-globally-ignored-directories ".ccls-cache"))
   (if IS-WINDOWS
       (setq ccls-executable "~/ccls/Release/ccls.exe")
-    (setq ccls-executable "~/ccls/Release/ccls")
+    (setq ccls-executable (concat doom-private-dir "tools/ccls"))
     )
   )
 

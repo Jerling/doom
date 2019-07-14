@@ -149,7 +149,7 @@
        ;;vala              ; GObjective-C
 
        :term
-       vterm                ; Terminal in emacs
+       term                ; Terminal in emacs
 
        ;; Applications are complex and opinionated modules that transform Emacs
        ;; toward a specific purpose. They may have additional dependencies and

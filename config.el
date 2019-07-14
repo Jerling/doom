@@ -175,3 +175,5 @@
 (add-to-list '+lookup-provider-url-alist
              '("Linux"    . "https://elixir.bootlin.com/linux/v2.6.39.4/ident/%s")
 )
+
+(setq multi-term-program "/usr/bin/zsh")

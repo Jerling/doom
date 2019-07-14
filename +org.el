@@ -74,23 +74,77 @@
         org-latex-default-class "ctexart"
         )
 
+  (setq org-agenda-dir +my-org-dir)
+  (setq org-agenda-file-note (expand-file-name "notes.org" org-agenda-dir))
+  (setq org-agenda-file-gtd (expand-file-name "gtd.org" org-agenda-dir))
+  (setq org-agenda-file-journal (expand-file-name "journal.org" org-agenda-dir))
+  (setq org-agenda-file-code-snippet (expand-file-name "snippet.org" org-agenda-dir))
+  (setq org-default-notes-file (expand-file-name "gtd.org" org-agenda-dir))
+  (setq org-agenda-file-blogposts (expand-file-name "all-posts.org" org-agenda-dir))
+  (setq org-agenda-files (list org-agenda-dir))
+
   (require 'org-protocol)
 
   (setq org-capture-templates
         `(
-          ("ts" "Study Task" entry
-           (file+headline ,(expand-file-name "gtd.org" +my-org-dir) "Tasks")
-           "* TODO %^{Brief Description}\tAdded: %U\t:Study:\n%?")
-          ("tp" "Project Task" entry
-           (file+headline ,(expand-file-name "gtd.org" +my-org-dir) "Tasks")
-           "* TODO %^{Brief Description}\tAdded: %U\t:Project:\n%?")
-          ("ps" "Protocol Text" plain
+          ("st" "Study Task" entry
+           (file+headline , org-agenda-file-gtd "Study Tasks")
+           "* TODO [#B] %^{Brief Description}\tAdded: %U\t:study:\n%?")
+          ("lt" "Life Task" entry
+           (file+headline , org-agenda-file-journal "Life Tasks")
+           "* TODO [#C] %^{Brief Description}\tAdded: %U\t:life:\n%?")
+          ("pw" "Work Project Task" entry
+           (file+headline ,org-agenda-file-gtd "Work Projects")
+           "* TODO [#A] %^{Brief Description}\tAdded: %U\t:Project:work:\n%?")
+          ("ps" "Self Project Task" entry
+           (file+headline ,org-agenda-file-gtd "Self Projects")
+           "* TODO [#B] %^{Brief Description}\tAdded: %U\t:Project:self:\n%?")
+          ("pt" "Protocol Text" plain
            (file+function ,(expand-file-name "web.org" +my-org-dir) org-capture-template-goto-link)
            "Added: %U\n\t%:initial" :empty-lines 1 :immediate-finish t :kill-buffer t)
           ("pb" "Protocol Bookmarks" entry
            (file+headline ,(expand-file-name "web.org" +my-org-dir) "Bookmarks")
            "* %:annotation\tAdded: %U" :empty-lines 1 :immediate-finish t :kill-buffer t)
-          ))
+          ("n" "notes" entry (file+headline org-agenda-file-note "Quick notes")
+            "* %^{Brief Description}\tAdded:%U\t:note:\n%?"
+            :empty-lines 1)
+          ("b" "Blog Ideas" entry (file+headline org-agenda-file-note "Blog Ideas")
+            "* TODO [#B] %^{Brief Description}\tAdded:%U\t:blog:\n %?"
+            :empty-lines 1)
+          ("s" "Code Snippet" entry
+            (file org-agenda-file-code-snippet)
+            "* %^{Brief Description} \n#+BEGIN_SRC %^{language}\n%?\n#+END_SRC")
+          ("w" "work" entry (file+headline org-agenda-file-gtd "Works")
+            "* TODO [#A] %^{Brief Description}\tAdded: %U\t:work:\n%?"
+            :empty-lines 1)
+          ("c" "Chrome" entry (file+headline org-agenda-file-note "Quick notes")
+            "* TODO [#C] %^{Brief Description}\tAdded: %U\t:link:\n %?\n %(my-retrieve-chrome-current-tab-url)\n"
+            :empty-lines 1)
+          ("l" "links" entry (file+headline org-agenda-file-note "Quick notes")
+            "* TODO [#C] %^{Brief Description}\tAdded: %U\t:link:\n %?\n"
+            :empty-lines 1)
+          ("j" "Journal Entry"
+            entry (file+datetree org-agenda-file-journal)
+            "* %^{Brief Description}\tAdded: %U\t:link:\n %?\n"
+            :empty-lines 1)
+          )
+        )
+
+
+  (setq org-agenda-custom-commands
+        `(
+          ("w" . "任务安排")
+          ("wa" "重要且紧急的任务" tags-todo "+PRIORITY=\"A\"")
+          ("wb" "重要且不紧急的任务" tags-todo "-weekly-monthly-daily+PRIORITY=\"B\"")
+          ("wc" "不重要且紧急的任务" tags-todo "+PRIORITY=\"C\"")
+          ("b" "Blog" tags-todo "BLOG")
+          ("p" . "项目安排")
+          ("pw" tags-todo "PROJECT+WORK+CATEGORY=\"work\"")
+          ("ps" tags-todo "PROJECT+DREAM+CATEGORY=\"self\"")
+          ("W" "Weekly Review"
+            ((stuck "") ;; review stuck projects as designated by org-stuck-projects
+            (tags-todo "PROJECT") ;; review all projects (assuming you use todo keywords to designate projects)
+            ))))
   )
 
 (defun org-capture-template-goto-link ()
@@ -107,3 +161,21 @@
       (goto-char (point-max))
       (or (bolp) (insert "\n"))
       (insert "** " hd "\n"))))
+
+(defun my-org-insert-src-block (src-code-type)
+  "Insert a `SRC-CODE-TYPE' type source code block in org-mode."
+  (interactive
+   (let ((src-code-types
+          '("emacs-lisp" "typescript" "python" "C" "sh" "java" "js" "clojure" "C++" "css"
+            "calc" "asymptote" "dot" "gnuplot" "ledger" "lilypond" "mscgen"
+            "octave" "oz" "plantuml" "R" "sass" "screen" "sql" "awk" "ditaa"
+            "haskell" "latex" "lisp" "matlab" "ocaml" "org" "perl" "ruby"
+            "scheme" "sqlite")))
+     (list (ido-completing-read "Source code type: " src-code-types))))
+  (progn
+    (newline-and-indent)
+    (insert (format "#+BEGIN_SRC %s\n" src-code-type))
+    (newline-and-indent)
+    (insert "#+END_SRC\n")
+    (previous-line 2)
+    (org-edit-src-code)))
