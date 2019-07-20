@@ -89,43 +89,39 @@
         `(
           ("st" "Study Task" entry
            (file+headline , org-agenda-file-gtd "Study Tasks")
-           "* TODO [#B] %^{Brief Description}\tAdded: %U\t:study:\n%?")
+           "* TODO [#B] %^{Brief Description}\tAdded: %T\t:study:\n%?")
           ("lt" "Life Task" entry
            (file+headline , org-agenda-file-journal "Life Tasks")
-           "* TODO [#C] %^{Brief Description}\tAdded: %U\t:life:\n%?")
+           "* TODO [#C] %^{Brief Description}\tAdded: %T\t:life:\n%?")
           ("pw" "Work Project Task" entry
            (file+headline ,org-agenda-file-gtd "Work Projects")
-           "* TODO [#A] %^{Brief Description}\tAdded: %U\t:Project:work:\n%?")
+           "* TODO [#A] %^{Brief Description}\tAdded: %T\t:Project:work:\n%?")
           ("ps" "Self Project Task" entry
            (file+headline ,org-agenda-file-gtd "Self Projects")
-           "* TODO [#B] %^{Brief Description}\tAdded: %U\t:Project:self:\n%?")
+           "* TODO [#B] %^{Brief Description}\tAdded: %T\t:Project:self:\n%?")
           ("pt" "Protocol Text" plain
            (file+function ,(expand-file-name "web.org" +my-org-dir) org-capture-template-goto-link)
            "Added: %U\n\t%:initial" :empty-lines 1 :immediate-finish t :kill-buffer t)
           ("pb" "Protocol Bookmarks" entry
            (file+headline ,(expand-file-name "web.org" +my-org-dir) "Bookmarks")
-           "* %:annotation\tAdded: %U" :empty-lines 1 :immediate-finish t :kill-buffer t)
+           "* %:annotation\tAdded: %T" :empty-lines 1 :immediate-finish t :kill-buffer t)
           ("n" "notes" entry (file+headline org-agenda-file-note "Quick notes")
-            "* %^{Brief Description}\tAdded:%U\t:note:\n%?"
+            "* %^{Brief Description}\tAdded:%T\t:note:\n%?"
             :empty-lines 1)
           ("b" "Blog Ideas" entry (file+headline org-agenda-file-note "Blog Ideas")
-            "* TODO [#B] %^{Brief Description}\tAdded:%U\t:blog:\n %?"
+            "* TODO [#B] %^{Brief Description}\tAdded:%T\t:blog:\n %?"
             :empty-lines 1)
           ("s" "Code Snippet" entry
             (file org-agenda-file-code-snippet)
             "* %^{Brief Description} \n#+BEGIN_SRC %^{language}\n%?\n#+END_SRC")
           ("w" "work" entry (file+headline org-agenda-file-gtd "Works")
-            "* TODO [#A] %^{Brief Description}\tAdded: %U\t:work:\n%?"
+            "* TODO [#A] %^{Brief Description}\tAdded: %T\t:work:\n%?"
             :empty-lines 1)
           ("c" "Chrome" entry (file+headline org-agenda-file-note "Quick notes")
-            "* TODO [#C] %^{Brief Description}\tAdded: %U\t:link:\n %?\n %(my-retrieve-chrome-current-tab-url)\n"
+            "* TODO [#C] %^{Brief Description}\tAdded: %T\t:link:\n %?\n %(my-retrieve-chrome-current-tab-url)\n"
             :empty-lines 1)
           ("l" "links" entry (file+headline org-agenda-file-note "Quick notes")
-            "* TODO [#C] %^{Brief Description}\tAdded: %U\t:link:\n %?\n"
-            :empty-lines 1)
-          ("j" "Journal Entry"
-            entry (file+datetree org-agenda-file-journal)
-            "* %^{Brief Description}\tAdded: %U\t:link:\n %?\n"
+            "* TODO [#C] %^{Brief Description}\tAdded: %T\t:link:\n %?\n"
             :empty-lines 1)
           )
         )
