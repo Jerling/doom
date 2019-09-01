@@ -9,10 +9,10 @@
 (package! package-lint)
 
 
-(package! isolate :recipe (:fetcher github :repo "casouri/isolate"))
-(package! color-rg :recipe (:fetcher github :repo "manateelazycat/color-rg"))
-(package! company-english-helper :recipe (:fetcher github :repo "manateelazycat/company-english-helper"))
-(package! aweshell :recipe (:fetcher github :repo "manateelazycat/aweshell"))
+(package! isolate :recipe (:host github :repo "casouri/isolate"))
+(package! color-rg :recipe (:host github :repo "manateelazycat/color-rg"))
+(package! company-english-helper :recipe (:host github :repo "manateelazycat/company-english-helper"))
+(package! aweshell :recipe (:host github :repo "manateelazycat/aweshell"))
 
 
 (package! auto-save :ignore t)

@@ -68,7 +68,8 @@
           ("\\.docx?\\'" "wps" (file))
           ("\\.pptx?\\'" "wpp" (file))
           ("\\.xlsx?\\'" "et" (file))))
-  (add-hook! :append 'emacs-startup-hook #'openwith-mode))
+  (add-hook! 'emacs-startup-hook #'openwith-mode)
+  )
 
 
 (set-lookup-handlers! 'emacs-lisp-mode :documentation #'helpful-at-point)
