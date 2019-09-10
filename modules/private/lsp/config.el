@@ -66,7 +66,8 @@
     (setq projectile-project-root-files-top-down-recurring
           (append '("compile_commands.json")
                   projectile-project-root-files-top-down-recurring))
-    (add-to-list 'projectile-globally-ignored-directories ".ccls-cache"))
+    (add-to-list 'projectile-globally-ignored-directories ".ccls-cache")
+    (add-to-list 'projectile-globally-ignored-directories "build"))
   (if IS-WINDOWS
       (setq ccls-executable "~/ccls/Release/ccls.exe")
     (setq ccls-executable (concat doom-private-dir "tools/ccls"))
@@ -101,3 +102,6 @@
 
 ;; (def-package! lsp-java-treemacs
 ;;   :after (treemacs))
+
+(setq lsp-enable-file-watchers nil)
+(add-to-list 'lsp-file-watch-ignored "build")
