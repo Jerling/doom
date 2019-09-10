@@ -8,7 +8,7 @@
 ;;   :after (ccls)
 ;;   :commands (clang-format-region clang-format-buffer))
 
-(defvar C-PROJECT (> 1 0))
+(defvar C-PROJECT (< 1 0))
 
 (def-package! cmake-project
   :after cc-mode
