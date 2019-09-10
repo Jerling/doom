@@ -11,8 +11,5 @@
 (setq display-line-numbers-type nil)
 
 ;; font
-(setq
-      doom-font (font-spec :family "DejaVu Sans Mono" :size 16)
-      doom-variable-pitch-font (font-spec :family "DejaVu Sans Mono")
-      doom-unicode-font (font-spec :family "DejaVu Sans Mono")
-      doom-big-font (font-spec :family "DejaVu Sans Mono" :size 19))
+;; (setq doom-font (font-spec :family "DejaVu Sans Mono" :size 16)
+(setq doom-font (font-spec :family "Sarasa Term SC" :size 16))
