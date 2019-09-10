@@ -1,10 +1,6 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; private/my-cc/packages.el
 
-(package! google-c-style)
-
-(package! clang-format)
-
 (package! cmake-project :recipe (:host github :repo "xhcoding/cmake-project"))
 
 ;; (package! zeal-at-point)
