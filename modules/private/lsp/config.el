@@ -1,8 +1,8 @@
 ;;; private/lsp/config.el -*- lexical-binding: t; -*-
 
-(def-package! spinner)
+(use-package! spinner)
 
-(def-package! lsp-mode
+(use-package! lsp-mode
   :commands (lsp-register-client)
   :config
   (setq lsp-print-io t
@@ -12,7 +12,7 @@
         lsp-project-blacklist '("^/usr/")
         lsp-highlight-symbol-at-point nil))
 
-(def-package! company-lsp
+(use-package! company-lsp
   :after lsp-mode
   :init
   (setq company-transformers nil
@@ -22,7 +22,7 @@
   (set-company-backend! 'lsp-mode 'company-lsp)
   )
 
-(def-package! lsp-ui
+(use-package! lsp-ui
   :hook (lsp-mode . lsp-ui-mode)
   :config
   (set-lookup-handlers! 'lsp-ui-mode
@@ -43,7 +43,7 @@
    "l" #'lsp-ui-peek--select-next-file))
 
 
-(def-package! dap-mode
+(use-package! dap-mode
   :after lsp-mode
   :config
   (setq dap--breakpoints-file (expand-file-name ".dap-breakpoints" doom-etc-dir))
@@ -53,7 +53,7 @@
 
 ;; lsp client config
 
-(def-package! ccls
+(use-package! ccls
   :init
   (add-hook! (c-mode c++-mode cuda-mode) #'lsp)
   :config
@@ -74,33 +74,33 @@
     )
   )
 
-;; (def-package! dap-lldb
+;; (use-package! dap-lldb
 ;;   :after (ccls)
 ;;   :config
 ;;   (setq dap-lldb-debugged-program-function 'cp-project-debug))
 
 ;; ms-python
-(def-package! ms-python
+(use-package! ms-python
  :config
  (add-hook 'python-mode-hook #'+my-python/enable-lsp)
  (setq ms-python-server-install-dir (expand-file-name "ms-pyls" doom-etc-dir))
  )
 
-(def-package! dap-python
+(use-package! dap-python
  :after (ms-python))
 
 ;; lsp-java
-;; (def-package! lsp-java
+;; (use-package! lsp-java
 ;;   :config
 ;;   (add-hook 'java-mode-hook #'lsp)
 ;;   (setq lsp-java-server-install-dir (expand-file-name "lsp-java/server" doom-etc-dir)
 ;;         lsp-java-workspace-dir (expand-file-name "lsp-java/workspace" doom-etc-dir)))
 
 
-;; (def-package! dap-java
+;; (use-package! dap-java
 ;;   :after (lsp-java))
 
-;; (def-package! lsp-java-treemacs
+;; (use-package! lsp-java-treemacs
 ;;   :after (treemacs))
 
 (setq lsp-enable-file-watchers nil)

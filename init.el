@@ -94,7 +94,11 @@
        ;;tmux              ; an API for interacting with tmux
        ;;upload            ; map local to remote projects via ssh/ftp
        ;;wakatime
-       flycheck            ; tasing you for every semicolon you forget
+       ;; flycheck
+
+       :checkers
+       syntax
+       
 
        :lang
        ;; assembly          ; assembly for fun or debugging
@@ -178,7 +182,7 @@
        (default +bindings +smartparens)
 
        :private
-       lsp
+       ;; lsp
        programer
        blog
        )

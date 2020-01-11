@@ -29,16 +29,16 @@
         "M-d" #'company-next-page
         "M-u" #'company-previous-page))
 
-(def-package! package-lint
+(use-package! package-lint
   :commands (package-lint-current-buffer))
 
-(def-package! auto-save
+(use-package! auto-save
   :load-path +my-ext-dir
   :config
   (setq +my-auto-save-timer nil)
   (setq auto-save-slient t))
 
-(def-package! visual-regexp
+(use-package! visual-regexp
   :commands (vr/query-replace vr/replace)
   )
 
@@ -46,11 +46,11 @@
   (add-to-list 'yas-snippet-dirs +my-yas-snipper-dir))
 
 
-(def-package! company-english-helper
+(use-package! company-english-helper
   :commands (toggle-company-english-helper))
 
 
-(def-package! scroll-other-window
+(use-package! scroll-other-window
   :load-path +my-ext-dir
   :config
   (sow-mode 1)
@@ -59,7 +59,7 @@
    :gnvime "<M-down>"  #'sow-scroll-other-window))
 
 
-(def-package! openwith
+(use-package! openwith
   :load-path +my-ext-dir
   :config
   (setq openwith-associations
@@ -103,7 +103,7 @@
  ;;  (add-to-list 'TeX-view-program-selection '(output-pdf "foxitreader"))
  )
 
-(def-package! pyim
+(use-package! pyim
   :defer 2
   :config
   (setq pyim-dcache-directory (expand-file-name "pyim" doom-cache-dir))
@@ -150,9 +150,9 @@
 (after! eshell
   (setq eshell-directory-name (expand-file-name "eshell" doom-etc-dir)))
 
-(def-package! aweshell)
+(use-package! aweshell)
 
-(def-package! color-rg
+(use-package! color-rg
   :commands (color-rg-search-input))
 
 (global-auto-revert-mode 0)

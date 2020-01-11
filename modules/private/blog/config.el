@@ -1,9 +1,9 @@
 ;;; private/my-blog/config.el -*- lexical-binding: t; -*-
 (defvar +my-blog-root-dir
-  "~/data/blog"
+  "~/jerling.github.io/"
   "Blog root directory.")
 
-(def-package! easy-hugo
+(use-package! easy-hugo
   :init
   (setq easy-hugo-basedir +my-blog-root-dir
     easy-hugo-root +my-blog-root-dir

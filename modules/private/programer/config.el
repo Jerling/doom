@@ -1,16 +1,16 @@
 ;;; private/my-cc/config.el -*- lexical-binding: t; -*-
 
-;;(def-package! google-c-style
+;;(use-package! google-c-style
 ;; :config
 ;; (add-hook! (c-mode c++-mode) #'google-set-c-style))
 
-;; (def-package! clang-format
+;; (use-package! clang-format
 ;;   :after (ccls)
 ;;   :commands (clang-format-region clang-format-buffer))
 
 (defvar C-PROJECT (< 1 0))
 
-(def-package! cmake-project
+(use-package! cmake-project
   :after cc-mode
   :commands (cp-project-refresh cp-project-new cp-project-debug)
   :config
